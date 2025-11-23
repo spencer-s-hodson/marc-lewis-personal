@@ -1,0 +1,60 @@
+import { Award, TrendingUp, Users, BookOpen } from "lucide-react";
+import { Badge } from "./ui/badge";
+import { Card } from "./ui/card";
+
+export default function Credentials() {
+  return (
+    <>
+      <section className="w-full py-16">
+        <div className="container w-full">
+          <div className="w-full ">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                  Data-Driven Sports Science Excellence
+                </h2>
+                <p className="text-muted-foreground mb-6 leading-relaxed">
+                  With a Ph.D. in exercise physiology and extensive experience spanning collegiate athletics, 
+                  research, and military service, Dr. Lewis brings unparalleled expertise to sports science, 
+                  fitness, and wellness.
+                </p>
+                <p className="text-muted-foreground mb-8 leading-relaxed">
+                  His approach combines scientific rigor with practical application, helping athletes and 
+                  organizations achieve peak performance through evidence-based strategies.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <Badge variant="default">Performance Optimization</Badge>
+                  <Badge variant="default">Athlete Monitoring</Badge>
+                  <Badge variant="default">Strength & Conditioning</Badge>
+                  <Badge variant="default">Exercise Physiology</Badge>
+                </div>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <Card className="text-center p-6 hover:shadow-lg transition-shadow">
+                  <Award className="h-8 w-8 mx-auto mb-2 text-primary" />
+                  <div className="text-2xl font-bold">Ph.D.</div>
+                  <div className="text-sm text-muted-foreground">Exercise Physiology</div>
+                </Card>
+                <Card className="text-center p-6 hover:shadow-lg transition-shadow">
+                  <TrendingUp className="h-8 w-8 mx-auto mb-2 text-primary" />
+                  <div className="text-2xl font-bold">15+</div>
+                  <div className="text-sm text-muted-foreground">Years Experience</div>
+                </Card>
+                <Card className="text-center p-6 hover:shadow-lg transition-shadow">
+                  <Users className="h-8 w-8 mx-auto mb-2 text-primary" />
+                  <div className="text-2xl font-bold">500+</div>
+                  <div className="text-sm text-muted-foreground">Athletes Coached</div>
+                </Card>
+                <Card className="text-center p-6 hover:shadow-lg transition-shadow">
+                  <BookOpen className="h-8 w-8 mx-auto mb-2 text-primary" />
+                  <div className="text-2xl font-bold">50+</div>
+                  <div className="text-sm text-muted-foreground">Research Publications</div>
+                </Card>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
