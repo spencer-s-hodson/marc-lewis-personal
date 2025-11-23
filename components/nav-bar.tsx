@@ -35,10 +35,12 @@ export default function NavBar() {
   return (
     <div className="w-full sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/70">
       <div className="flex flex-row justify-between items-center py-2">
-        <div className="flex flex-row items-center gap-3">
-          <Image src="/globe.svg" alt="Globe" width={50} height={50} />
-          <p className="text-lg"><b>Dr. Marc Lewis</b></p>
-        </div>
+        <a href="/">
+          <div className="flex flex-row items-center gap-3">
+            <Image src="/globe.svg" alt="Globe" width={50} height={50} />
+            <p className="text-lg"><b>Dr. Marc Lewis</b></p>
+          </div>
+        </a>
 
         {/* Desktop Navigation - Hidden on small screens */}
         <NavigationMenu data-orientation="vertical" className="hidden lg:flex">

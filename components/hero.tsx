@@ -28,27 +28,27 @@ export default function Hero() {
           />
         </div>
       </div>
-      
+
       {/* Overlay for better text readability */}
       <div className="absolute inset-0 bg-black/50" />
-      
+
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center text-center px-4">
         <Badge className="mb-4" variant="default">
-          Applied Sport Science Expert
+          Performance Specialist
         </Badge>
         <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white">
-          Welcome to <span className="text-primary">Dr. Marc Lewis</span>'s site
+          Coaching, Workshops & More
         </h1>
-        <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-4xl">
+        {/* <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-4xl">
           Dr. Marc Lewis is a leading expert in applied sports science, specializing in performance optimization, athlete monitoring, and strength and conditioning. He integrates cutting-edge research with practical strategies to enhance athletic performance and recovery. With a Ph.D. in exercise physiology and a background spanning collegiate athletics, research, and military service, Dr. Lewis brings a data-driven approach to sports science, fitness, and wellness.
-        </p>
+        </p> */}
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
           <Button size="lg" variant="default">
-            View Services
+            <a href="/services">View Services</a>
           </Button>
           <Button size="lg" variant="outline" className="bg-white/10 backdrop-blur-sm text-white border-white/30 hover:bg-white/20">
-            Learn More
+            <a href="/about">Learn More</a>
           </Button>
         </div>
       </div>
