@@ -7,6 +7,12 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Services from "@/components/services";
 import Media from "@/components/media";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Dr. Marc Lewis | Home",
+  description: "Leader in Applied Sport Science, Performance, and Human Resilience",
+};
 
 export default function Home() {
   return (

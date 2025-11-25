@@ -1,6 +1,9 @@
-import { Award, TrendingUp, Users, BookOpen } from "lucide-react";
+import { Award, TrendingUp, Users, BookOpen, ChevronRight } from "lucide-react";
 import { Badge } from "./ui/badge";
 import { Card } from "./ui/card";
+import { Button } from "./ui/button";
+import Link from "next/link";
+import WorkExperienceSlider from "./work-experience-slider";
 
 export default function Credentials() {
   return (
@@ -22,12 +25,17 @@ export default function Credentials() {
                   His approach combines scientific rigor with practical application, helping athletes and 
                   organizations achieve peak performance through evidence-based strategies.
                 </p>
-                <div className="flex flex-wrap gap-2">
-                  <Badge variant="default">Performance Optimization</Badge>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {/* <Badge variant="default">Performance Optimization</Badge>
                   <Badge variant="default">Athlete Monitoring</Badge>
-                  <Badge variant="default">Strength & Conditioning</Badge>
-                  <Badge variant="default">Exercise Physiology</Badge>
+                  <Badge variant="default">Strength & Conditioning</Badge> */}
                 </div>
+                <Link className="flex justify-center mt-8" href="/about">
+                  <Button>
+                    Learn More About Dr. Lewis
+                    <ChevronRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <Card className="text-center p-6 hover:shadow-lg transition-shadow">
@@ -55,6 +63,8 @@ export default function Credentials() {
           </div>
         </div>
       </section>
+
+      <WorkExperienceSlider />
     </>
   );
 }

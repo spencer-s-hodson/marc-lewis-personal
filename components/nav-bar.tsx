@@ -37,7 +37,6 @@ export default function NavBar() {
       <div className="flex flex-row justify-between items-center py-2">
         <a href="/">
           <div className="flex flex-row items-center gap-3">
-            <Image src="/globe.svg" alt="Globe" width={50} height={50} />
             <p className="text-lg"><b>Dr. Marc Lewis</b></p>
           </div>
         </a>
@@ -63,7 +62,9 @@ export default function NavBar() {
         </NavigationMenu>
 
         {/* Desktop Contact Button - Hidden on small screens */}
-        <Button className="hidden lg:flex">Contact</Button>
+        <Button asChild className="hidden lg:flex">
+          <Link href="/contact">Contact</Link>
+        </Button>
 
         {/* Mobile Hamburger Menu - Only visible on small screens */}
         <Sheet open={isOpen} onOpenChange={setIsOpen}>

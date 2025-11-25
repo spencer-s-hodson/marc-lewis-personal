@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -11,13 +10,6 @@ export default function Footer() {
             {/* Logo & Description */}
             <div className="md:col-span-2 justify-center items-center">
               <div className="flex items-center space-x-3 mb-4">
-                <Image
-                  src="/globe.svg"
-                  alt="Dr. Marc Lewis Logo"
-                  width={36}
-                  height={36}
-                  className="rounded-full bg-primary"
-                />
                 <span className="font-bold text-xl">Dr. Marc Lewis</span>
               </div>
               <p className="text-muted-foreground mb-4">
@@ -32,6 +24,11 @@ export default function Footer() {
                 <li>
                   <Link href="/" className="text-muted-foreground hover:text-primary transition-colors">
                     Home
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/about" className="text-muted-foreground hover:text-primary transition-colors">
+                    About
                   </Link>
                 </li>
                 <li>
@@ -58,17 +55,7 @@ export default function Footer() {
               <ul className="space-y-2">
                 <li>
                   <a
-                    href="https://www.linkedin.com/in/drmarclewis"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    LinkedIn
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://twitter.com/drmarclewis"
+                    href="https://x.com/marctlewis"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-primary transition-colors"
@@ -84,6 +71,16 @@ export default function Footer() {
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
                     ResearchGate
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.sportsmith.co/contributors/marc-lewis/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    Sportsmith
                   </a>
                 </li>
                 <li>

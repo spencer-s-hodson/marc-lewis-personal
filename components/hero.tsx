@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -44,11 +45,11 @@ export default function Hero() {
           Dr. Marc Lewis is a leading expert in applied sports science, specializing in performance optimization, athlete monitoring, and strength and conditioning. He integrates cutting-edge research with practical strategies to enhance athletic performance and recovery. With a Ph.D. in exercise physiology and a background spanning collegiate athletics, research, and military service, Dr. Lewis brings a data-driven approach to sports science, fitness, and wellness.
         </p> */}
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
-          <Button size="lg" variant="default">
-            <a href="/services">View Services</a>
+          <Button asChild size="lg" variant="default">
+            <Link href="/services">View Services</Link>
           </Button>
-          <Button size="lg" variant="outline" className="bg-white/10 backdrop-blur-sm text-white border-white/30 hover:bg-white/20">
-            <a href="/about">Learn More</a>
+          <Button asChild size="lg" variant="outline" className="bg-white/10 backdrop-blur-sm text-white border-white/30 hover:bg-white/20">
+            <Link href="/about">Learn More</Link>
           </Button>
         </div>
       </div>
