@@ -7,34 +7,34 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative w-full py-16 md:py-24 overflow-hidden">
+    <section className="relative w-full min-h-[600px] md:min-h-[700px] overflow-hidden">
       {/* Background Images */}
       <div className="absolute inset-0 flex">
         <div className="relative w-1/2 h-full">
           <Image
-            src="/images/marc-lewis-running.jpeg"
+            src="/images/marc/marc-running.jpeg"
             alt="Background"
             fill
-            className="object-cover"
+            className="object-cover object-center"
             priority
           />
         </div>
         <div className="relative w-1/2 h-full">
           <Image
-            src="/images/marc-lewis-texans.jpg"
+            src="/images/marc/marc-texans-headshot.jpeg"
             alt="Background"
             fill
-            className="object-cover"
+            className="object-cover object-top"
             priority
           />
         </div>
       </div>
 
       {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-black/50" />
+      <div className="absolute inset-0 bg-black/60" />
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center text-center px-4">
+      <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 min-h-[600px] md:min-h-[700px]">
         <Badge className="mb-4" variant="default">
           Performance Specialist
         </Badge>

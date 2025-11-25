@@ -1,18 +1,15 @@
 import Hero from "@/components/hero";
 import Credentials from "@/components/credentials";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
-import { TrendingUp, Users, Award, ChevronRight } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
+import { ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Services from "@/components/services";
 import Media from "@/components/media";
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Dr. Marc Lewis | Home",
-  description: "Leader in Applied Sport Science, Performance, and Human Resilience",
-};
+// export const metadata: Metadata = {
+//   description: "Leader in Applied Sport Science, Performance, and Human Resilience",
+// };
 
 export default function Home() {
   return (

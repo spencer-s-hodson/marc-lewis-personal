@@ -1,4 +1,16 @@
+import { Metadata } from "next";
 import Image from "next/image";
+import { PodcastIcon } from "lucide-react";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card"
+
+export const metadata: Metadata = {
+  title: "Media",
+  description: "Media and Insights from Dr. Marc Lewis",
+};
 
 export default function Media() {
   const podcasts = [
@@ -34,7 +46,7 @@ export default function Media() {
       title: "Cheeky Mid Weeky",
       episode: "Dr. Marc Lewis | Future of High Performance In Sport",
       description: "Discussion on the evolving landscape of high-performance sport science.",
-      image: "/images/podcasts/iron-culture.jpg",
+      image: "/images/podcasts/cheeky-mid-weekly.jpg",
       links: [
         { platform: "Poddtoppen", url: "https://poddtoppen.se/podcast/1688781157/cheeky-mid-weeky/dr-marc-lewis-future-of-high-performance-in-sport", icon: "▶️" },
       ],
@@ -51,30 +63,143 @@ export default function Media() {
   ];
   const articles = [
     {
-      title: "New Insights in Recovery Science",
-      description: "A review of current evidence on optimizing athletic recovery strategies.",
-      link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-      image: "/images/articles/new-insights-in-recovery-science.jpg",
+      title: "Which tool or piece of equipment has provided you with the highest return on investment over the past 12 months?",
+      publication: "Sportsmith",
+      description: "Expert insights on cost-effective equipment and tools for high-performance training environments.",
+      link: "https://www.sportsmith.co/articles/which-tool-or-piece-of-equipment-has-provided-you-with-the-highest-return-on-investment-over-the-past-12-months/",
+      type: "article",
+      image: "/images/articles/sportsmith1.webp",
+    },
+    {
+      title: "Monitoring training load and athlete response in team sport",
+      publication: "Sportsmith",
+      description: "Comprehensive guide to implementing effective training load monitoring systems.",
+      link: "https://www.sportsmith.co/videos/monitoring-training-load-and-athlete-response-in-team-sport/",
+      type: "article",
+      image: "/images/articles/sportsmith2.webp",
+    },
+    {
+      title: "Going deep into GPS metrics for American football",
+      publication: "Sportsmith",
+      description: "Advanced analysis of GPS technology application in professional football performance.",
+      link: "https://www.sportsmith.co/articles/going-deep-into-gps-metrics-for-american-football/",
+      type: "article",
+      image: "/images/articles/sportsmith3.webp",
+    },
+    {
+      title: "Graduation is More Than A Degree For VA Tech Director of Sports Science",
+      publication: "The Roanoke Star",
+      description: "Dr. Lewis's journey and philosophy on education and professional development in sports science.",
+      link: "https://www.theroanokestar.com/2021/05/03/graduation-is-more-than-a-degree-for-va-tech-director-of-sports-science/",
+      type: "feature",
+      image: "/images/articles/graduation-is-more-than.jpg",
+    },
+    {
+      title: "How to Maximize Concurrent Training",
+      publication: "Bret Contreras",
+      description: "Evidence-based strategies for balancing strength and endurance training adaptations.",
+      link: "https://bretcontreras.com/how-to-maximize-concurrent-training/",
+      type: "article",
+      image: "/images/articles/how-to-maximize-concurrent-training.png",
+    },
+    {
+      title: "Programming Cardio to Support Muscle & Strength Development",
+      publication: "Sports Science",
+      description: "Practical guidelines for integrating cardiovascular training with strength programs.",
+      link: "https://drjohnrusin.com/cardio-to-support-muscle-strength-development/",
+      type: "article",
+      image: "/images/articles/programming-cardio-to-support-muscle-strength-development.jpg",
+    },
+    // {
+    //   title: "Putting the C in S&C: An Energy Systems-based Approach",
+    //   publication: "Sports Science",
+    //   description: "Comprehensive framework for conditioning within strength and conditioning programs.",
+    //   link: "#",
+    //   type: "article",
+    //   image: "/images/articles/sports-science.jpg",
+    // },
+    {
+      title: "Strength Training and Endurance Athletes",
+      publication: "Sports Science",
+      description: "Exploring the role and implementation of strength training for endurance performance.",
+      link: "https://www.researchgate.net/publication/286937718_Strength_Training_and_Endurance_Athletes",
+      type: "article",
+      image: "/images/articles/strength-training-endurance-athletes.png",
+    },
+    {
+      title: "Dietary Nitrate Supplementation Improves Exercise Performance and Decreases Blood Pressure in COPD Patients",
+      publication: "PMC",
+      description: "Research study examining the effects of nitrate supplementation on exercise capacity and cardiovascular health.",
+      link: "https://pmc.ncbi.nlm.nih.gov/articles/PMC4411191/",
+      type: "research",
+      image: "/images/articles/dietary-nitrate-supplementation.jpg",
+    },
+    {
+      title: "Interobserver Reliability of Quantitative Muscle Sonographic Analysis in the Critically Ill Population",
+      publication: "Journal of Ultrasound in Medicine",
+      description: "Validation study of muscle ultrasound techniques for clinical assessment.",
+      link: "https://onlinelibrary.wiley.com/doi/abs/10.7863/ultra.34.7.1191",
+      type: "research",
+      image: "/images/articles/wiley-library.png",
     },
   ];
+
+  const YouTubeIcon = () => {
+    return (
+      <Image
+        src="/icons/youtube.svg"
+        alt="YouTube"
+        width={28}
+        height={28}
+        className="brightness-0 invert"
+      />
+    );
+  };
+
+  const SpotifyIcon = () => {
+    return (
+      <Image
+        src="/icons/spotify.svg"
+        alt="Spotify"
+        width={28}
+        height={28}
+        className="brightness-0 invert"
+      />
+    );
+  };
 
   return (
     <>
       <section className="py-12">
         <div className="container w-full space-y-16">
+          {/* Page Header */}
+          <div className="text-center max-w-3xl mx-auto">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Media & Insights</h1>
+            <p className="text-lg text-muted-foreground">
+              Explore Dr. Marc Lewis's contributions to sports science through podcast interviews, 
+              research publications, and feature articles. Discover insights on high-performance 
+              training, athlete monitoring, and the latest advancements in sports science.
+            </p>
+          </div>
+
           {/* Podcast Section */}
           <div>
             <h2 className="text-2xl md:text-3xl font-bold mb-6">Featured Podcasts</h2>
+
+
+
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {podcasts.map((podcast, index) => (
                 <div key={index} className="bg-card border border-border rounded-lg shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden">
                   <div className="h-40 bg-muted flex items-center justify-center overflow-hidden relative">
-                    <Image 
-                      src={podcast.image} 
-                      alt={podcast.title}
-                      fill
-                      className="object-cover"
-                    />
+                    <a href={podcast.links[0].url} target="_blank" rel="noopener noreferrer">
+                      <Image
+                        src={podcast.image}
+                        alt={podcast.title}
+                        fill
+                        className="object-contain"
+                      />
+                    </a>
                   </div>
                   <div className="p-5">
                     <h3 className="text-lg font-semibold mb-1">{podcast.title}</h3>
@@ -83,16 +208,29 @@ export default function Media() {
                     <div className="flex items-center gap-3">
                       <span className="text-sm text-muted-foreground font-medium">Listen on:</span>
                       {podcast.links.map((link, linkIndex) => (
-                        <a
-                          key={linkIndex}
-                          href={link.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-2xl hover:scale-110 transition-transform duration-200"
-                          title={link.platform}
-                        >
-                          {link.icon}
-                        </a>
+                        <HoverCard key={linkIndex}>
+                          <HoverCardTrigger asChild>
+                            <a
+                              href={link.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="hover:scale-110 transition-transform duration-200 cursor-pointer"
+                            >
+                              {link.platform === "YouTube" ? (
+                                <YouTubeIcon />
+                              ) : link.platform === "Spotify" ? (
+                                <SpotifyIcon />
+                              ) : (
+                                <PodcastIcon className="w-7 h-7 hover:opacity-80" />
+                              )}
+                            </a>
+                          </HoverCardTrigger>
+                          <HoverCardContent className="w-auto">
+                            <div className="text-sm">
+                              <p>{link.platform}</p>
+                            </div>
+                          </HoverCardContent>
+                        </HoverCard>
                       ))}
                     </div>
                   </div>
@@ -104,41 +242,34 @@ export default function Media() {
           {/* Articles & Publications Section */}
           <div>
             <h2 className="text-2xl md:text-3xl font-bold mb-6">Articles & Publications</h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              {/* Article Card 1 */}
-              <div className="bg-card border border-border rounded-lg shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col">
-                <div className="h-32 bg-muted flex items-center justify-center">
-                  <span className="text-4xl">📄</span>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {articles.map((article, index) => (
+                <div key={index} className="bg-card border border-border rounded-lg shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col">
+                  <div className="h-40 bg-muted flex items-center justify-center overflow-hidden relative">
+                    <a href={article.link} target="_blank" rel="noopener noreferrer">
+                      <Image
+                        src={article.image}
+                        alt={article.title}
+                        fill
+                        className="object-contain"
+                      />
+                    </a>
+                  </div>
+                  <div className="p-5 flex-1 flex flex-col">
+                    <h3 className="text-lg font-semibold mb-1">{article.title}</h3>
+                    <p className="text-muted-foreground text-sm mb-2">{article.publication}</p>
+                    <p className="text-sm text-foreground mb-4 flex-1">{article.description}</p>
+                    <a
+                      href={article.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block text-primary font-medium hover:underline mt-auto"
+                    >
+                      Read {article.type === "research" ? "Research" : article.type === "feature" ? "Feature" : "Article"} →
+                    </a>
+                  </div>
                 </div>
-                <div className="p-5 flex-1 flex flex-col">
-                  <h3 className="text-lg font-semibold mb-1">New Insights in Recovery Science</h3>
-                  <p className="text-muted-foreground text-sm mb-2">Journal of Applied Physiology</p>
-                  <p className="text-sm text-foreground mb-4 flex-1">A review of current evidence on optimizing athletic recovery strategies.</p>
-                  <a
-                    href="#"
-                    className="inline-block text-primary font-medium hover:underline mt-auto"
-                  >
-                    Read Article →
-                  </a>
-                </div>
-              </div>
-              {/* Article Card 2 */}
-              <div className="bg-card border border-border rounded-lg shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col">
-                <div className="h-32 bg-muted flex items-center justify-center">
-                  <span className="text-4xl">📝</span>
-                </div>
-                <div className="p-5 flex-1 flex flex-col">
-                  <h3 className="text-lg font-semibold mb-1">Cutting-Edge Sport Technology</h3>
-                  <p className="text-muted-foreground text-sm mb-2">Sportsmith</p>
-                  <p className="text-sm text-foreground mb-4 flex-1">Exploring the latest advancements in wearable tech for athletes.</p>
-                  <a
-                    href="#"
-                    className="inline-block text-primary font-medium hover:underline mt-auto"
-                  >
-                    Read Article →
-                  </a>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
 

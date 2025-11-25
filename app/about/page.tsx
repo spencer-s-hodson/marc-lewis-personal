@@ -2,7 +2,7 @@ import { Timeline } from "@/components/timeline";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Dr. Marc Lewis | About",
+  title: "About",
   description: "Leader in Applied Sport Science, Performance, and Human Resilience",
 };
 
@@ -79,7 +79,7 @@ const careerTimeline = [
 export default function About() {
   return (
     <>
-      <section className="max-w-3xl mx-auto py-16 px-4">
+      <section className="w-full py-16 px-4">
         <div className="mb-10 text-center">
           <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
             About Dr. Marc Lewis
