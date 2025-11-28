@@ -144,6 +144,33 @@ export default function Media() {
     },
   ];
 
+  const otherMedia = [
+    {
+      title: "Marc Lewis - Sportsmith",
+      description: "Profile feature on Marc Lewis and his work in sports science.",
+      link: "https://www.sportsmith.co/profile/marc-lewis/",
+      image: "/images/other-media/sportsmith.jpeg",
+      type: "Profile",
+      date: "",
+    },
+    {
+      title: "For Marc Lewis, graduation is more than a degree",
+      description: "Feature story on Dr. Lewis's journey and philosophy on education and professional development.",
+      link: "https://www.theroanokestar.com/2021/05/03/graduation-is-more-than-a-degree-for-va-tech-director-of-sports-science/",
+      image: "/images/articles/graduation-is-more-than.jpg",
+      type: "Feature",
+      date: "May 2021",
+    },
+    {
+      title: "Meet Marc Lewis, NFL Salute to Service 2024 Nominee",
+      description: "Recognition of Dr. Lewis's contributions to the NFL community and veteran support.",
+      link: "https://www.nfl.com/causes/salute/nominees/2024/texans",
+      image: "/images/other-media/marc-salute.webp",
+      type: "Recognition",
+      date: "2024",
+    },
+  ];
+
   const YouTubeIcon = () => {
     return (
       <Image
@@ -185,9 +212,6 @@ export default function Media() {
           {/* Podcast Section */}
           <div>
             <h2 className="text-2xl md:text-3xl font-bold mb-6">Featured Podcasts</h2>
-
-
-
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {podcasts.map((podcast, index) => (
                 <div key={index} className="bg-card border border-border rounded-lg shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden">
@@ -277,60 +301,35 @@ export default function Media() {
           <div>
             <h2 className="text-2xl md:text-3xl font-bold mb-6">Other Media</h2>
             <div className="grid md:grid-cols-3 gap-8">
-              {/* Other Media Card 1 */}
-              <div className="bg-card border border-border rounded-lg shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col">
-                <div className="h-32 bg-muted flex items-center justify-center">
-                  <span className="text-4xl">🎬</span>
+              {otherMedia.map((media, index) => (
+                <div key={index} className="bg-card border border-border rounded-lg shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col">
+                  <div className="h-40 bg-muted flex items-center justify-center overflow-hidden relative">
+                    <a href={media.link} target="_blank" rel="noopener noreferrer">
+                      <Image
+                        src={media.image}
+                        alt={media.title}
+                        fill
+                        className="object-contain"
+                      />
+                    </a>
+                  </div>
+                  <div className="p-5 flex-1 flex flex-col">
+                    <h3 className="text-lg font-semibold mb-1">{media.title}</h3>
+                    {media.date && <p className="text-muted-foreground text-sm mb-2">{media.date}</p>}
+                    <p className="text-sm mb-4 flex-1">{media.description}</p>
+                    <a
+                      href={media.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block text-primary font-medium hover:underline mt-auto"
+                    >
+                      View {media.type} →
+                    </a>
+                  </div>
                 </div>
-                <div className="p-5 flex-1 flex flex-col">
-                  <h3 className="text-lg font-semibold mb-1">Webinar: Athlete Monitoring</h3>
-                  <p className="text-muted-foreground text-sm mb-2">Recorded: March 2024</p>
-                  <p className="text-sm mb-4 flex-1">A practical demonstration on monitoring and adapting training loads.</p>
-                  <a
-                    href="#"
-                    className="inline-block text-primary font-medium hover:underline mt-auto"
-                  >
-                    Watch Now →
-                  </a>
-                </div>
-              </div>
-              {/* Other Media Card 2 */}
-              <div className="bg-card border border-border rounded-lg shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col">
-                <div className="h-32 bg-muted flex items-center justify-center">
-                  <span className="text-4xl">🖥️</span>
-                </div>
-                <div className="p-5 flex-1 flex flex-col">
-                  <h3 className="text-lg font-semibold mb-1">Conference Presentation</h3>
-                  <p className="text-muted-foreground text-sm mb-2">USA Sports Science Expo</p>
-                  <p className="text-sm mb-4 flex-1">Results from elite football performance and injury prevention projects.</p>
-                  <a
-                    href="#"
-                    className="inline-block text-primary font-medium hover:underline mt-auto"
-                  >
-                    View Slides →
-                  </a>
-                </div>
-              </div>
-              {/* Other Media Card 3 */}
-              <div className="bg-card border border-border rounded-lg shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col">
-                <div className="h-32 bg-muted flex items-center justify-center">
-                  <span className="text-4xl">📺</span>
-                </div>
-                <div className="p-5 flex-1 flex flex-col">
-                  <h3 className="text-lg font-semibold mb-1">TV Interview</h3>
-                  <p className="text-muted-foreground text-sm mb-2">ESPN Segment</p>
-                  <p className="text-sm mb-4 flex-1">Dr. Lewis shares insights on sports innovation and athlete health.</p>
-                  <a
-                    href="#"
-                    className="inline-block text-primary font-medium hover:underline mt-auto"
-                  >
-                    Watch Clip →
-                  </a>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
-
         </div>
       </section>
     </>

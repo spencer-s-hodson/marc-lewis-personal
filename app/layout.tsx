@@ -42,7 +42,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="flex flex-col min-h-screen w-full md:w-3/4 mx-auto px-8 md:px-0">
+          <div className="flex flex-col min-h-screen w-full lg:w-3/5 mx-auto px-8 lg:px-0">
             <NavBar />
             <main className="flex-1">
               {children}

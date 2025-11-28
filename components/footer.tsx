@@ -4,11 +4,11 @@ export default function Footer() {
   return (
     <footer className="border-t bg-muted/30 py-12 w-full relative z-10">
       <div className="absolute inset-0 -z-10" />
-      <div className="container w-3/4 mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-8">
+      <div className="container lg:w-3/5 mx-auto">
+        <div className="items-center mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {/* Logo & Description */}
-            <div className="md:col-span-2 justify-center items-center">
+            <div className="col-span-2 justify-center items-center">
               <div className="flex items-center space-x-3 mb-4">
                 <span className="font-bold text-xl">Dr. Marc Lewis</span>
               </div>
