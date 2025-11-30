@@ -1,10 +1,10 @@
 import { Timeline } from "@/components/timeline";
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "About",
-  description: "Leader in Applied Sport Science, Performance, and Human Resilience",
-};
+// export const metadata: Metadata = {
+//   title: "About",
+//   description: "Leader in Applied Sport Science, Performance, and Human Resilience",
+// };
 
 const careerTimeline = [
   {

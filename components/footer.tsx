@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="border-t bg-muted/30 py-12 w-full relative z-10">
       <div className="absolute inset-0 -z-10" />
-      <div className="container lg:w-3/5 mx-auto">
+      <div className="container w-full max-w-6xl mx-auto px-4">
         <div className="items-center mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {/* Logo & Description */}

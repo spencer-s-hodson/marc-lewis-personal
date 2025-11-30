@@ -7,10 +7,10 @@ import {
   HoverCardTrigger,
 } from "@/components/ui/hover-card"
 
-export const metadata: Metadata = {
-  title: "Media",
-  description: "Media and Insights from Dr. Marc Lewis",
-};
+// export const metadata: Metadata = {
+//   title: "Media",
+//   description: "Media and Insights from Dr. Marc Lewis",
+// };
 
 export default function Media() {
   const podcasts = [
@@ -201,10 +201,10 @@ export default function Media() {
         <div className="container w-full space-y-16">
           {/* Page Header */}
           <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Media & Insights</h1>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">Media & Insights</h1>
             <p className="text-lg text-muted-foreground">
-              Explore Dr. Marc Lewis's contributions to sports science through podcast interviews, 
-              research publications, and feature articles. Discover insights on high-performance 
+              Explore Dr. Marc Lewis's contributions to sports science through podcast interviews,
+              research publications, and feature articles. Discover insights on high-performance
               training, athlete monitoring, and the latest advancements in sports science.
             </p>
           </div>

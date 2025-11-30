@@ -55,8 +55,6 @@ export default function Coaching() {
         </div>
       </div>
 
-      
-      
       <p className="text-base md:text-lg leading-relaxed mb-8">
         Whether you're preparing for competition, rebuilding your fitness foundation, or looking to take your performance to the next level, Marc provides science-backed coaching designed to produce measurable results—and a training experience rooted in clarity, purpose, and professionalism.
       </p>
@@ -64,13 +62,12 @@ export default function Coaching() {
       {/* CTA Section with Background Image */}
       <section className="relative w-full overflow-hidden rounded-lg">
         {/* Background Image */}
-        <div className="relative w-full">
+        <div className="md:col-span-2 relative h-[700px] md:h-[800px] lg:h-[900px] rounded-lg overflow-hidden">
           <Image
-            src="/images/all-images/tennessee-titans.jpeg"
+            src="/images/all-images/vt-jump.jpeg"
             alt="Start your coaching journey"
-            width={1200}
-            height={400}
-            className="w-full h-auto"
+            fill
+            className="object-cover"
           />
         </div>
 
@@ -79,7 +76,7 @@ export default function Coaching() {
 
         {/* CTA Content */}
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 py-8 md:py-12">
-          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4 text-white">
+          <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4 text-white">
             Ready to Elevate Your Performance?
           </h3>
           <p className="text-base sm:text-lg md:text-xl text-white/90 mb-6 md:mb-8 max-w-2xl">
