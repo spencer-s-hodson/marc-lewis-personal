@@ -7,13 +7,10 @@ import Services from "@/components/services";
 import Media from "@/components/media";
 import { Metadata } from "next";
 
-// export const metadata: Metadata = {
-//   title: "Home | Dr. Marc Lewis",
-//   description: "Leader in Applied Sport Science, Performance, and Human Resilience",
-//   icons: {
-//     icon: '/favicon.ico',
-//   },
-// };
+export const metadata: Metadata = {
+  title: "Home | Dr. Marc Lewis",
+  description: "Leader in Applied Sport Science, Performance, and Human Resilience",
+};
 
 export default function Home() {
   return (

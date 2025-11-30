@@ -1,10 +1,10 @@
 import { Timeline } from "@/components/timeline";
 import { Metadata } from "next";
 
-// export const metadata: Metadata = {
-//   title: "About",
-//   description: "Leader in Applied Sport Science, Performance, and Human Resilience",
-// };
+export const metadata: Metadata = {
+  title: "About",
+  description: "Learn about Dr. Marc Lewis's career journey, experience in sport science, and commitment to human performance excellence.",
+};
 
 const careerTimeline = [
   {

@@ -1,16 +1,16 @@
-import { Metadata } from "next";
 import Image from "next/image";
 import { PodcastIcon } from "lucide-react";
+import { Metadata } from "next";
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card"
 
-// export const metadata: Metadata = {
-//   title: "Media",
-//   description: "Media and Insights from Dr. Marc Lewis",
-// };
+export const metadata: Metadata = {
+  title: "Media",
+  description: "Explore Dr. Marc Lewis's podcast interviews, research publications, and articles on sports science and performance optimization.",
+};
 
 export default function Media() {
   const podcasts = [
@@ -61,6 +61,7 @@ export default function Media() {
       ],
     },
   ];
+
   const articles = [
     {
       title: "Which tool or piece of equipment has provided you with the highest return on investment over the past 12 months?",
