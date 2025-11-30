@@ -8,20 +8,20 @@ import {
 } from "@/components/ui/navigation-menu";
 import {
   Sheet,
+  SheetClose,
   SheetContent,
+  SheetDescription,
+  SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import Image from "next/image";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
-import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export default function NavBar() {
-  const [isOpen, setIsOpen] = useState(false);
   const currrentPath = usePathname();
 
   const navLinks = [
@@ -29,7 +29,6 @@ export default function NavBar() {
     { href: "/about", label: "About" },
     { href: "/services", label: "Services" },
     { href: "/media", label: "Media" },
-    { href: "/contact", label: "Contact" },
   ];
 
   return (
@@ -37,7 +36,7 @@ export default function NavBar() {
       <div className="flex flex-row justify-between items-center py-2">
         <a href="/">
           <div className="flex flex-row items-center gap-3">
-            <p className="text-lg"><b>Dr. Marc Lewis</b></p>
+            <p className="text-xl"><b>Dr. Marc Lewis</b></p>
           </div>
         </a>
 
@@ -63,40 +62,44 @@ export default function NavBar() {
 
         {/* Desktop Contact Button - Hidden on small screens */}
         <Button asChild className="hidden lg:flex">
-          <Link href="/contact">Contact</Link>
+          <Link href="/contact">Contact Now</Link>
         </Button>
 
-        {/* Mobile Hamburger Menu - Only visible on small screens */}
-        <Sheet open={isOpen} onOpenChange={setIsOpen}>
+        {/* Mobile Hamburger Menu */}
+        <Sheet>
           <SheetTrigger asChild>
             <Button variant="ghost" size="icon" className="lg:hidden">
-              <Menu className="size-6" />
+              <Menu className="size-8" />
               <span className="sr-only">Toggle menu</span>
             </Button>
           </SheetTrigger>
           <SheetContent side="right">
             <SheetHeader>
-              <SheetTitle>Menu</SheetTitle>
+              <SheetTitle>Dr. Marc Lewis</SheetTitle>
             </SheetHeader>
-            <nav className="flex flex-col gap-4 mt-8">
-              {navLinks.map(({ href, label }) => (
-                <Link
-                  key={href}
-                  href={href}
-                  onClick={() => setIsOpen(false)}
-                  className={
-                    currrentPath === href
-                      ? "text-lg font-semibold underline underline-offset-4 py-2"
-                      : "text-lg py-2 hover:text-primary transition-colors"
-                  }
-                >
-                  {label}
-                </Link>
-              ))}
-              <Button className="mt-4" onClick={() => setIsOpen(false)}>
-                Contact
-              </Button>
-            </nav>
+            <div className="px-4">
+              <nav className="flex flex-col gap-4 mt-8 ml-8">
+                {navLinks.map(({ href, label }) => (
+                  <SheetClose asChild key={href}>
+                    <Link
+                      href={href}
+                      className={
+                        currrentPath === href
+                          ? "text-lg font-semibold underline underline-offset-4 py-2"
+                          : "text-lg py-2 hover:text-primary transition-colors"
+                      }
+                    >
+                      {label}
+                    </Link>
+                  </SheetClose>
+                ))}
+                <SheetClose asChild>
+                  <Button asChild className="mt-4">
+                    <Link href="/contact">Contact Now</Link>
+                  </Button>
+                </SheetClose>
+              </nav>
+            </div>
           </SheetContent>
         </Sheet>
       </div>

@@ -1,6 +1,8 @@
 import { Timeline } from "@/components/timeline";
 import { Metadata } from "next";
-
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
 export const metadata: Metadata = {
   title: "About",
   description: "Learn about Dr. Marc Lewis's career journey, experience in sport science, and commitment to human performance excellence.",
@@ -9,68 +11,82 @@ export const metadata: Metadata = {
 const careerTimeline = [
   {
     year: "Present",
-    title: "Founder & CEO",
+    title: "Co-Founder",
     organization: "Sport Science Network",
-    description: "Leading a global network collaborating with teams and organizations worldwide to implement evidence-based strategies for performance optimization, injury prevention, and athlete development.",
+    description: [
+      "Leading hub advancing sport science practice through connecting practitioners to information, people, and resources allowing them to advance their practice."
+    ],
     type: "experience" as const,
     image: "/images/companies/ssn.png",
-    // Add images like this:
-    // image: "/images/sport-science-network.jpg",
-    // imageAlt: "Sport Science Network team",
   },
   {
-    year: "2020-2023",
+    year: "",
     title: "Director of Applied Sport Science",
-    organization: "National Football League (NFL)",
-    description: "Spearheaded sport science initiatives across the league, working with teams to advance performance analytics, player health monitoring, and injury prevention protocols.",
-    type: "experience" as const,
-    image: "/images/companies/nfl.png",
-  },
-  {
-    year: "2018-2020",
-    title: "Sports Science Consultant",
     organization: "Houston Texans",
-    description: "Provided expert consultation on player performance optimization, training load management, and data-driven decision making for one of the NFL's premier franchises.",
+    description: [
+      "Oversee the collection, management, and analysis of data to inform decision-making to maximize player performance and availability."
+    ],
     type: "experience" as const,
     image: "/images/companies/texans.png",
   },
   {
-    year: "2015-2018",
-    title: "Associate Director, Applied Health and Performance Science",
+    year: "",
+    title: "Associate Director of Performance Science",
     organization: "Penn State University",
-    description: "Led applied sport science programs supporting elite collegiate athletes, integrating cutting-edge research with practical performance solutions.",
+    description: [
+      "Oversaw athlete monitoring initiatives, the integration of performance science initiatives into team sport, and education for best practices within sport performance."
+    ],
     type: "experience" as const,
     image: "/images/companies/penn-state.png",
   },
   {
-    year: "2012-2015",
-    title: "Director of Sport Science",
+    year: "",
+    title: "Director of Sport Science & Assistant Director of Strength and Conditioning",
     organization: "Virginia Tech",
-    description: "Established and directed comprehensive sport science programs, collaborating with coaching staff to optimize athlete preparation and recovery.",
+    description: [
+      "Served as the director of sport science and assistant director of strength and conditioning for the football program overseeing all sport science initiatives, while serving as one of the five football-only S&C coaches.",
+      "Completed a PhD in exercise physiology with a plan of study developed around acquiring multidisciplinary training to obtain skills within a variety of sport performance disciplines, while serving as a graduate assistant teaching undergraduate courses in exercise physiology."
+    ],
     type: "experience" as const,
     image: "/images/companies/virginia-tech.png",
   },
   {
-    year: "2010",
-    title: "NSCA Certifications",
-    organization: "National Strength and Conditioning Association",
-    description: "Earned prestigious CPSS (Certified Performance and Sport Scientist) and CSCS*D (Certified Strength and Conditioning Specialist with Distinction) certifications.",
-    type: "achievement" as const,
-    image: "/images/companies/nsca2.png",
+    year: "",
+    title: "Strength and Conditioning/Sport Physiology Fellow",
+    organization: "U.S. Ski and Snowboard",
+    description: [
+      "Served as a strength and conditioning/sport physiology fellow at the U.S. Ski and Snowboard Center for Excellence."
+    ],
+    type: "experience" as const,
+    image: "/images/companies/us-ski-snowboard.png",
   },
   {
-    year: "2005-2010",
-    title: "Bachelor of Science",
+    year: "",
+    title: "Graduate Assistant",
+    organization: "University of South Carolina",
+    description: [
+      "Completed graduate studies in applied exercise physiology under the direction of Dr. Larry Durstine, while serving as a graduate assistant teaching exercise physiology and as a sports performance intern within the athletics department.",
+    ],
+    type: "milestone" as const,
+    image: "/images/companies/south-carolina.png",
+  },
+  {
+    year: "",
+    title: "Bachelor of Science in Health and Exercise Science",
     organization: "Wake Forest University",
-    description: "Graduated with a degree in Health and Exercise Science, building the academic foundation for a career in applied sport science and human performance.",
+    description: [
+      "Completed his undergraduate studies in Health and Exercise Science, while completing honors research under the direction of Dr. Michael Berry. Lewis also served as a strength and conditioning intern and worked in the private sector as personal trainer applying what was learned in the classroom in practical application.",
+    ],
     type: "milestone" as const,
     image: "/images/companies/wake-forest.png",
   },
   {
-    year: "2000-2005",
+    year: "",
     title: "Airborne Infantryman",
     organization: "United States Army",
-    description: "Served with distinction, developing lifelong commitment to resilience, teamwork, discipline, and service. This experience shaped leadership philosophy and dedication to human performance.",
+    description: [
+      "Served combat rotations in support of Operation Iraqi Freedom and Operation Enduring Freedom, while earning multiple awards for service including the combat infantryman badge and the Army Commendation Medal.",
+    ],
     type: "experience" as const,
     image: "/images/companies/us-army.png",
   },
@@ -88,42 +104,34 @@ export default function About() {
             Leader in Applied Sport Science, Performance, and Human Resilience
           </p>
         </div>
+        <Image className="mb-8" src="/images/all-images/marc-headshot-texans-main.jpeg" alt="Dr. Marc Lewis" width={1000} height={1000} />
         <div className="space-y-6 text-lg leading-relaxed">
           <p>
-            Dr. Marc Lewis is a renowned expert in the fields of applied sport science, high performance, and human resilience. With a career spanning over two decades, Dr. Lewis has worked with elite athletes, professional sports organizations, military units, and academic institutions, helping drive cutting-edge research and practical advancements in athletic performance and health.
+            Marc Lewis is a Director of Applied Sport Science in professional American football. In his current role, he oversees the collection, management, and analysis of data to inform decision-making to maximize player performance and availability. He has extensive experience in human performance as an applied sport and performance scientist, coach, educator, and researcher. He specializes in developing and implementing systems in stressful and time restricted environments with outcomes focused on enhancing player performance and reducing the likelihood of injury.
           </p>
           <p>
-            As the Founder and CEO of the <strong>Sport Science Network</strong>, Dr. Lewis collaborates with teams and organizations worldwide to implement evidence-based strategies for performance optimization, injury prevention, and athlete development. His expertise blends physiology, data analytics, and coaching insights to deliver holistic solutions for clients ranging from the NFL to the United States Army.
+            Aside from his current job scope, Marc serves on the National Football League's (NFL) Sports Science Advisory Board and is a member of the leadership group of the advisory board. In addition, he serves on the NFL's international team travel working group and is the sport science representative on the musculoskeletal knee task force. Moreover, he serves on the executive board of the Professional Football Performance Coaches Association (PFPCA) and is the head of the sport science subcommittee of the PFPCA.
           </p>
           <p>
-            Dr. Lewis has held influential roles such as Director of Applied Sport Science for the <strong>NFL</strong>, Sports Science Consultant to the <strong>Houston Texans</strong>, and senior leadership positions at leading universities including <strong>Penn State</strong> and <strong>Virginia Tech</strong>. His academic pedigree includes a B.S. in Health and Exercise Science from <strong>Wake Forest University</strong>, and advanced leadership certifications through the <strong>National Strength and Conditioning Association (NSCA)</strong>.
+            Prior to his position in professional football, Marc served as the associate director of applied health and performance science at Penn State University. In his role, he provided support for Penn State athletics in the development of student-athlete health, well-being, and performance through facilitating collaboration between departments, overseeing the integration of monitoring and decision-making systems, and high-performance education for best practices in sport performance.
           </p>
           <p>
-            Prior to his academic and professional pursuits, Dr. Lewis served as an Airborne Infantryman in the <strong>U.S. Army</strong>, where he developed his lifelong commitment to resilience, teamwork, and service. He is dedicated to mentoring the next generation of sport scientists, coaches, and leaders, sharing his knowledge through teaching, consulting, and public speaking engagements.
+            Marc earned his PhD in exercise physiology and metabolism from Virginia Tech, while creating a plan of study supporting multidisciplinary training and course work in a range of areas (which resulted in two other master degrees). He focused his research on athletic performance and recovery, and completed his dissertation entitled "Athlete Monitoring in American Football" while working full-time in athletics as the director of sport science and assistant director of strength and conditioning for the Virginia Tech football team. While at Virginia Tech, he kept one foot in the classroom/lab and one on the field/floor serving as a graduate teaching and research assistant, an applied sport scientist, and strength and conditioning coach.
           </p>
           <p>
-            Dr. Lewis continually pushes the boundaries of what’s possible in human performance, committed to evidence-based innovation and elevating those around him.
+            He completed his undergraduate degree in health and exercise science from Wake Forest University, while completing his honors research under the direction of Dr. Michael Berry. While completing his undergraduate and graduate education, he held research positions while serving in athletics as a strength and conditioning and sports performance intern and applied sports science fellow. He is a certified performance and sport scientist (CPSS) and certified strength and conditioning specialist with distinction (CSCS, *D) through the National Strength and Conditioning Association, as well as a level 1 weightlifting coach (USAW) through the United States Weightlifting Association.
+          </p>
+          <p>
+            Marc is an endurance athlete and weightlifter who has competed in numerous marathons, ultramarathons, and Ironman events. Prior to starting college, Marc served as an Airborne Infantryman in the United States Army deploying on missions in support of Operation Iraqi Freedom and Operation Enduring Freedom.
           </p>
         </div>
-        <div className="mt-12">
-          <h2 className="text-2xl font-bold mb-4">Selected Experience</h2>
-          <ul className="space-y-2 text-base list-disc list-inside">
-            <li>Founder &amp; CEO, Sport Science Network</li>
-            <li>Director of Applied Sport Science, NFL</li>
-            <li>Sports Science Consultant, Houston Texans</li>
-            <li>Associate Director, Applied Health and Performance Science, Penn State University</li>
-            <li>Director of Sport Science, Virginia Tech</li>
-            <li>Airborne Infantryman, U.S. Army</li>
-            <li>NSCA CPSS &amp; CSCS*D</li>
-          </ul>
-        </div>
+        
         <div className="mt-12 text-center">
-          <a
-            href="/contact"
-            className="inline-block px-8 py-3 bg-primary text-white font-semibold rounded-lg shadow hover:bg-primary/90 transition"
-          >
-            Contact Dr. Lewis
-          </a>
+          <Link href="/contact" passHref>
+            <Button variant="default" className="px-8 text-lg">
+              Contact Dr. Lewis
+            </Button>
+          </Link>
         </div>
       </section>
 
