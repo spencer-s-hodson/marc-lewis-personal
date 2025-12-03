@@ -78,7 +78,7 @@ export default function NavBar() {
               <SheetTitle>Dr. Marc Lewis</SheetTitle>
             </SheetHeader>
             <div className="px-4">
-              <nav className="flex flex-col gap-4 mt-8 ml-8">
+              <nav className="flex flex-col gap-4">
                 {navLinks.map(({ href, label }) => (
                   <SheetClose asChild key={href}>
                     <Link

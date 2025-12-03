@@ -4,16 +4,18 @@ import Coaching from "@/components/services/coaching";
 import Workshops from "@/components/services/workshops";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Image from "next/image";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 export default function ServicesTabs() {
   const contentRef = useRef<HTMLDivElement>(null);
+  const [selectedTab, setSelectedTab] = useState<string | null>(null);
 
   const handleTabChange = (value: string) => {
+    setSelectedTab(value);
     // Smooth scroll to content section when tab changes
     // Small delay to ensure content is rendered before scrolling
     setTimeout(() => {
-      contentRef.current?.scrollIntoView({ 
+      contentRef.current?.scrollIntoView({
         behavior: 'smooth',
         block: 'start'
       });
@@ -21,7 +23,7 @@ export default function ServicesTabs() {
   };
 
   return (
-    <Tabs className="w-full" onValueChange={handleTabChange}>
+    <Tabs className="w-full" onValueChange={handleTabChange} value={selectedTab || undefined}>
       {/* Header Section */}
       <section className="relative w-full overflow-hidden bg-gray-900">
         {/* Background Image */}
@@ -51,11 +53,17 @@ export default function ServicesTabs() {
           </p>
 
           {/* Tabs in Header */}
-          <TabsList className="bg-white/10 backdrop-blur-sm border-white/20">
-            <TabsTrigger value="coaching" className="data-[state=active]:bg-white data-[state=active]:text-black text-white">
+          <TabsList className="bg-white/10 backdrop-blur-lg border border-white/20">
+            <TabsTrigger
+              value="coaching"
+              className="data-[state=active]:bg-white data-[state=active]:text-black text-white hover:bg-white/20 hover:scale-105 transition-all duration-300"
+            >
               Coaching
             </TabsTrigger>
-            <TabsTrigger value="workshops" className="data-[state=active]:bg-white data-[state=active]:text-black text-white">
+            <TabsTrigger
+              value="workshops"
+              className="data-[state=active]:bg-white data-[state=active]:text-black text-white hover:bg-white/20 hover:scale-105 transition-all duration-300"
+            >
               Workshops
             </TabsTrigger>
           </TabsList>

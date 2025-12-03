@@ -46,7 +46,7 @@ export default function Coaching() {
           </div>
           <div className="relative h-[250px] md:h-[192px] lg:h-[242px] rounded-lg overflow-hidden">
             <Image
-              src="/images/all-images/excercise.jpeg"
+              src="/images/all-images/texans-gym.jpeg"
               alt="Athlete training"
               fill
               className="object-cover"
