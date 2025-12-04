@@ -29,7 +29,7 @@ export default function ServicesTabs() {
         {/* Background Image */}
         <div className="relative w-full">
           {/* Background Image */}
-          <div className="relative w-full min-h-[700px] sm:min-h-[800px] md:min-h-[900px] lg:min-h-[1000px]">
+          <div className="relative w-full min-h-[600px] sm:min-h-[700px] md:min-h-[800px] lg:min-h-[950px]">
             <Image
               src="/images/all-images/texans-training-camp-4.jpeg"
               alt="Services header"

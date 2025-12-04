@@ -4,55 +4,60 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { fadeInUp } from "@/lib/fadeInUp";
 
 export default function Hero() {
   return (
-    <section className="relative w-full min-h-[600px] md:min-h-[700px] overflow-hidden">
-      {/* Background Images */}
-      <div className="absolute inset-0 flex">
-        <div className="relative w-1/2 h-full">
-          <Image
-            src="/images/marc/marc-running.jpeg"
-            alt="Background"
-            fill
-            className="object-cover object-center"
-            priority
-          />
+    <motion.div {...fadeInUp}>
+      <section className="relative w-full min-h-[700px] md:min-h-[800px] lg:min-h-[950px] overflow-hidden">
+        {/* Background Images */}
+        <div className="grid grid-cols-2 absolute inset-0 flex">
+          <div className="relative h-full">
+            <Image
+              src="/images/transparent/running-transparent.png"
+              alt="Background"
+              fill
+              className="object-cover object-center"
+              priority
+            />
+          </div>
+          <div className="relative h-full">
+            <Image
+              src="/images/transparent/marc-headshot-penn-state-transparent.png"
+              alt="Background"
+              fill
+              className="object-contain object-top"
+              style={{ objectFit: 'cover' }}
+              priority
+            />
+          </div>
         </div>
-        <div className="relative w-1/2 h-full">
-          <Image
-            src="/images/marc/marc-texans-headshot.jpeg"
-            alt="Background"
-            fill
-            className="object-cover object-top"
-            priority
-          />
-        </div>
-      </div>
 
-      {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-black/60" />
+        {/* Overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/60" />
 
-      {/* Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 min-h-[600px] md:min-h-[700px]">
-        <Badge className="mb-4" variant="default">
-          Performance Specialist
-        </Badge>
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white">
-          Coaching, Workshops & More
-        </h1>
-        {/* <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-4xl">
+        {/* Content */}
+        <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 min-h-[600px] md:min-h-[700px]">
+          <Badge className="mb-4" variant="default">
+            Performance Specialist
+          </Badge>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 text-white">
+            Coaching, Workshops & More
+          </h1>
+          {/* <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-4xl">
           Dr. Marc Lewis is a leading expert in applied sports science, specializing in performance optimization, athlete monitoring, and strength and conditioning. He integrates cutting-edge research with practical strategies to enhance athletic performance and recovery. With a Ph.D. in exercise physiology and a background spanning collegiate athletics, research, and military service, Dr. Lewis brings a data-driven approach to sports science, fitness, and wellness.
         </p> */}
-        <div className="flex flex-col sm:flex-row gap-6 justify-center">
-          <Button asChild size="lg" variant="default">
-            <Link href="/services">View Services</Link>
-          </Button>
-          <Button asChild size="lg" variant="outline" className="bg-white/10 backdrop-blur-sm text-white border-white/30 hover:bg-white/20">
-            <Link href="/about">Learn More</Link>
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <Button asChild size="lg" variant="default">
+              <Link href="/services">View Services</Link>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="bg-white/10 backdrop-blur-sm text-white border-white/30 hover:bg-white/20">
+              <Link href="/about">Learn More</Link>
+            </Button>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </motion.div>
   );
 }

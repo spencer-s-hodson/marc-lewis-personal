@@ -1,7 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import Marquee from "react-fast-marquee";
+import { motion } from "framer-motion";
+import { fadeInUp } from "@/lib/fadeInUp";
 
 const workExperience = [
   {
@@ -48,7 +49,7 @@ const workExperience = [
   },
   {
     organization: "U.S. Army",
-    logo: "/images/companies/us-army.png",
+    logo: "/images/companies/geronimo.png",
     alt: "United States Army logo",
     role: "Airborne Infantryman"
   }
@@ -56,7 +57,7 @@ const workExperience = [
 
 export default function WorkExperienceSlider() {
   return (
-    <section className="w-full py-16 overflow-hidden">
+    <motion.section {...fadeInUp} className="w-full py-16 overflow-hidden bg-white dark:bg-background">
       <div className="container w-full">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
           Proven Track Record Across Elite Teams & Institutions
@@ -73,7 +74,6 @@ export default function WorkExperienceSlider() {
           ))}
         </Marquee>
       </div>
-    </section>
+    </motion.section>
   );
 }
-

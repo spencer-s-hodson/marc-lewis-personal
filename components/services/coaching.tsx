@@ -6,7 +6,7 @@ export default function Coaching() {
   return (
     <section className="mb-16">
       <h1 className="text-3xl md:text-4xl font-bold mb-6">Coaching</h1>
-      
+
       {/* Text Block */}
       <div className="mb-8">
         <p className="mb-4 text-base md:text-lg leading-relaxed">
@@ -24,21 +24,21 @@ export default function Coaching() {
 
       {/* Magazine-Style Image Layout */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6 mb-8">
-        {/* Large Featured Image - Takes 2 columns on desktop */}
-        <div className="md:col-span-2 relative h-[300px] md:h-[400px] lg:h-[500px] rounded-lg overflow-hidden">
+        {/* Large Featured Image - Takes 3 columns on desktop */}
+        <div className="md:col-span-1 relative h-[300px] md:h-[400px] lg:h-[500px] rounded-lg overflow-hidden">
           <Image
-            src="/images/all-images/texans-training-camp-3.jpeg"
+            src="/images/all-images/running-3.png"
             alt="Marc Lewis coaching session"
             fill
             className="object-cover"
           />
         </div>
-        
-        {/* Right Column - Two Stacked Images */}
-        <div className="flex flex-col gap-4 lg:gap-6">
+
+        {/* Middle Column - Two Stacked Images */}
+        <div className="flex flex-col md:col-span-1 gap-4 lg:gap-6">
           <div className="relative h-[250px] md:h-[192px] lg:h-[242px] rounded-lg overflow-hidden">
             <Image
-              src="/images/all-images/fsu-mentors.jpeg"
+              src="/images/all-images/biking.jpeg"
               alt="Training session"
               fill
               className="object-cover"
@@ -46,12 +46,22 @@ export default function Coaching() {
           </div>
           <div className="relative h-[250px] md:h-[192px] lg:h-[242px] rounded-lg overflow-hidden">
             <Image
-              src="/images/all-images/texans-gym.jpeg"
+              src="/images/all-images/running-2.jpeg"
               alt="Athlete training"
               fill
               className="object-cover"
             />
           </div>
+        </div>
+
+        {/* Bottom Column - Large Featured Image */}
+        <div className="md:col-span-1 relative h-[300px] md:h-[400px] lg:h-[500px] rounded-lg overflow-hidden">
+          <Image
+            src="/images/all-images/swimming.jpeg"
+            alt="Marc Lewis coaching session"
+            fill
+            className="object-cover"
+          />
         </div>
       </div>
 

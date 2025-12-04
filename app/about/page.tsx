@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { fadeInUp } from "@/lib/fadeInUp";
 
 // Note: metadata export removed due to "use client" directive
 // Add metadata in parent layout or use next/head if needed
@@ -89,18 +90,11 @@ const careerTimeline = [
       "Served combat rotations in support of Operation Iraqi Freedom and Operation Enduring Freedom, while earning multiple awards for service including the combat infantryman badge and the Army Commendation Medal.",
     ],
     type: "experience" as const,
-    image: "/images/companies/us-army.png",
+    image: "/images/companies/geronimo.png",
   },
 ];
 
 export default function About() {
-  const fadeInUp = {
-    initial: { opacity: 0, y: 20 },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true },
-    transition: { duration: 1 }
-  };
-
   return (
     <>
       {/* Hero Section with Background Image */}
@@ -187,7 +181,7 @@ export default function About() {
                   </p>
                   <div className="w-full">
                     <img
-                      src="/images/all-images/texans-gym.jpeg"
+                      src="/images/all-images/texans-friend.jpeg"
                       alt="Professional training environment"
                       className="w-full rounded-lg shadow-lg object-cover py-4"
                     />
@@ -223,7 +217,7 @@ export default function About() {
                 </div>
                 {/* More Images */}
                 <motion.div {...fadeInUp}>
-                  <div className="flex flex-row gap-4 py-8">
+                  <div className="flex flex-row gap-4 py-4">
                     <div className="relative flex-1 h-[400px] rounded-lg overflow-hidden">
                       <Image
                         src="/images/all-images/texans-training-camp.jpeg"
@@ -259,13 +253,24 @@ export default function About() {
           <div className="mb-16">
             <motion.div {...fadeInUp}>
               <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
-                {/* <span className="w-12 h-1 bg-primary"></span> */}
                 Academic Foundation
               </h2>
 
               {/* Small Screens */}
               <div className="block md:hidden">
-
+                <div className="flex flex-col gap-4 relative flex-1 rounded-lg overflow-hidden ">
+                  <p className="text-lg leading-relaxed">
+                    Marc earned his PhD in exercise physiology and metabolism from Virginia Tech, while creating a plan of study supporting multidisciplinary training and course work in a range of areas (which resulted in two other master degrees). He focused his research on athletic performance and recovery, and completed his dissertation entitled "Athlete Monitoring in American Football" while working full-time in athletics as the director of sport science and assistant director of strength and conditioning for the Virginia Tech football team. While at Virginia Tech, he kept one foot in the classroom/lab and one on the field/floor serving as a graduate teaching and research assistant, an applied sport scientist, and strength and conditioning coach.
+                  </p>
+                  <img
+                    src="/images/all-images/marc-headshot-vt.jpeg"
+                    alt="Penn State"
+                    className="object-cover object-[center_30%]"
+                  />
+                  <p className="text-lg leading-relaxed">
+                    He completed his undergraduate degree in health and exercise science from Wake Forest University, while completing his honors research under the direction of Dr. Michael Berry. While completing his undergraduate and graduate education, he held research positions while serving in athletics as a strength and conditioning and sports performance intern and applied sports science fellow. He is a certified performance and sport scientist (CPSS) and certified strength and conditioning specialist with distinction (CSCS, *D) through the National Strength and Conditioning Association, as well as a level 1 weightlifting coach (USAW) through the United States Weightlifting Association.
+                  </p>
+                </div>
               </div>
 
               {/* Large Screens */}
@@ -280,7 +285,7 @@ export default function About() {
                       He completed his undergraduate degree in health and exercise science from Wake Forest University, while completing his honors research under the direction of Dr. Michael Berry. While completing his undergraduate and graduate education, he held research positions while serving in athletics as a strength and conditioning and sports performance intern and applied sports science fellow. He is a certified performance and sport scientist (CPSS) and certified strength and conditioning specialist with distinction (CSCS, *D) through the National Strength and Conditioning Association, as well as a level 1 weightlifting coach (USAW) through the United States Weightlifting Association.
                     </p>
                   </div>
-                  
+
                   {/* Right column - 2 images stacked, taking full height */}
                   <div className="flex flex-col gap-6">
                     <div className="relative flex-1 rounded-lg overflow-hidden">
@@ -294,61 +299,96 @@ export default function About() {
                   </div>
                 </div>
               </div>
-
-
             </motion.div>
           </div>
 
-
-          {/* Section 5: Education & Certifications */}
-          {/* <div className="">
-            <motion.div {...fadeInUp}>
-              <div className="grid md:grid-cols-2 gap-8 items-center">
-                <div className="relative h-64 md:h-full min-h-[350px] order-2 md:order-1">
-                  <Image
-                    src="/images/all-images/running-2.jpeg"
-                    alt="Athletic performance"
-                    fill
-                    className="rounded-lg shadow-lg object-cover"
-                  />
-                </div>
-                <div className="order-1 md:order-2">
-                  <p className="text-lg leading-relaxed">
-                    He completed his undergraduate degree in health and exercise science from Wake Forest University, while completing his honors research under the direction of Dr. Michael Berry. While completing his undergraduate and graduate education, he held research positions while serving in athletics as a strength and conditioning and sports performance intern and applied sports science fellow. He is a certified performance and sport scientist (CPSS) and certified strength and conditioning specialist with distinction (CSCS, *D) through the National Strength and Conditioning Association, as well as a level 1 weightlifting coach (USAW) through the United States Weightlifting Association.
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          </div> */}
-
-          {/* Section 6: Personal Athletics & Military */}
+          {/* Section 3: Personal Athletics & Military */}
           <motion.div {...fadeInUp}>
             <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
-              {/* <span className="w-12 h-1 bg-primary"></span> */}
               Athlete & Veteran
             </h2>
-            <div className="space-y-6">
-              <p className="text-lg leading-relaxed">
-                Marc is an endurance athlete and weightlifter who has competed in numerous marathons, ultramarathons, and Ironman events. Prior to starting college, Marc served as an Airborne Infantryman in the United States Army deploying on missions in support of Operation Iraqi Freedom and Operation Enduring Freedom.
-              </p>
 
-              {/* Military Service Callout */}
-              <div className="p-6 bg-gradient-to-r from-slate-100 to-slate-50 dark:from-slate-800 dark:to-slate-900 border-l-4 border-slate-600 rounded-r-lg">
-                <div className="flex items-start gap-4">
-                  <div className="text-4xl">🎖️</div>
-                  <div>
-                    <h3 className="font-bold text-xl mb-2">Military Service</h3>
-                    <p className="text-base">
-                      Served as an Airborne Infantryman in the United States Army with combat rotations in support of Operation Iraqi Freedom and Operation Enduring Freedom. Earned multiple awards including the Combat Infantryman Badge and Army Commendation Medal.
-                    </p>
+            {/* Small Screens */}
+            <div className="block md:hidden">
+              <div className="flex flex-col gap-4">
+                <p className="text-lg leading-relaxed">
+                  Marc is an endurance athlete and weightlifter who has competed in numerous marathons, ultramarathons, and Ironman events. Prior to starting college, Marc served as an Airborne Infantryman in the United States Army deploying on missions in support of Operation Iraqi Freedom and Operation Enduring Freedom.
+                </p>
+                <div className="w-full">
+                  <img
+                    src="/images/all-images/texans-salute.jpeg"
+                    alt="Military service tribute"
+                    className="w-full rounded-lg shadow-lg object-cover"
+                  />
+                </div>
+                
+                {/* Military Service Callout */}
+                <div className="p-6 border-l-4 border-slate-600 bg-slate-900/30 rounded-r-lg">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0">
+                      <Image
+                        src="/images/companies/geronimo.png"
+                        alt="Geronimo - 501st Parachute Infantry Regiment"
+                        width={60}
+                        height={60}
+                        className="rounded"
+                      />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-xl mb-2">Military Service</h3>
+                      <p className="text-base">
+                        Served as an Airborne Infantryman in the United States Army with combat rotations in support of Operation Iraqi Freedom and Operation Enduring Freedom. Earned multiple awards including the Combat Infantryman Badge and Army Commendation Medal.
+                      </p>
+                    </div>
                   </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Large Screens */}
+            <div className="hidden md:block">
+              <div className="grid grid-cols-2 gap-6 items-start">
+                {/* Left column - Text content */}
+                <div className="space-y-6">
+                  <p className="text-lg leading-relaxed">
+                    Marc is an endurance athlete and weightlifter who has competed in numerous marathons, ultramarathons, and Ironman events. Prior to starting college, Marc served as an Airborne Infantryman in the United States Army deploying on missions in support of Operation Iraqi Freedom and Operation Enduring Freedom.
+                  </p>
+                  
+                  {/* Military Service Callout */}
+                  <div className="p-6 border-l-4 border-slate-600 bg-slate-900/30 rounded-r-lg">
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0">
+                        <Image
+                          src="/images/companies/geronimo.png"
+                          alt="Geronimo - 501st Parachute Infantry Regiment"
+                          width={60}
+                          height={60}
+                          className="rounded"
+                        />
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-xl mb-2">Military Service</h3>
+                        <p className="text-base">
+                          Served as an Airborne Infantryman in the United States Army with combat rotations in support of Operation Iraqi Freedom and Operation Enduring Freedom. Earned multiple awards including the Combat Infantryman Badge and Army Commendation Medal.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right column - Image */}
+                <div className="relative h-[500px] rounded-lg overflow-hidden">
+                  <Image
+                    src="/images/all-images/texans-salute.jpeg"
+                    alt="Military service tribute"
+                    fill
+                    className="object-cover rounded-lg shadow-lg"
+                  />
                 </div>
               </div>
             </div>
           </motion.div>
         </div>
-
-
       </section>
 
       {/* Contact CTA */}
