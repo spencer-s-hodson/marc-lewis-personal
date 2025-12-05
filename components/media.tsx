@@ -8,28 +8,36 @@ import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { fadeInUp } from "@/lib/fadeInUp";
+import { PodcastCard, ArticleCard, OtherMediaCard } from "@/components/media-cards";
 
 export default function Media() {
-  const mediaSamples = [
-    {
+  const mediaSamples = {
+    podcast: {
       title: "Iron Culture Podcast",
+      episode: "Ep 344 - Sports Science In Elite Athletics (ft. Dr. Marc Lewis)",
       description: "Dr. Lewis discusses sports science applications in elite athletics.",
       image: "/images/podcasts/iron-culture.jpg",
-      mediaType: "podcast",
+      links: [
+        { platform: "YouTube", url: "https://www.youtube.com/watch?v=IXd0-4jHfzs", icon: "▶️" },
+        { platform: "Spotify", url: "https://creators.spotify.com/pod/profile/massresearchreview/episodes/Ep-344---Sports-Science-In-Elite-Athletics-ft--Dr--Marc-Lewis-e37rej4", icon: "🎧" },
+      ],
     },
-    {
+    article: {
       title: "Which tool or piece of equipment has provided you with the highest return on investment over the past 12 months?",
+      publication: "Sportsmith",
       description: "Expert insights on cost-effective equipment and tools for high-performance training environments.",
+      link: "https://www.sportsmith.co/articles/which-tool-or-piece-of-equipment-has-provided-you-with-the-highest-return-on-investment-over-the-past-12-months/",
+      type: "article",
       image: "/images/articles/sportsmith1.webp",
-      mediaType: "article",
     },
-    {
-      title: "Dietary Nitrate Supplementation Improves Exercise Performance and Decreases Blood Pressure in COPD Patients",
-      description: "Research study examining the effects of nitrate supplementation on exercise capacity and cardiovascular health.",
-      image: "/images/articles/dietary-nitrate-supplementation.jpg",
-      mediaType: "research",
+    otherMedia: {
+      title: "Sport Science Handbook",
+      description: "Comprehensive guide for evidence-based decision-making in sport science.",
+      link: "https://www.sportsmith.co/profile/marc-lewis/",
+      image: "/images/other-media/ssh-cover.jpg",
+      type: "Resource",
     },
-  ];
+  }
   return (
     <>
       {/* Media Preview */}
@@ -46,33 +54,14 @@ export default function Media() {
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {mediaSamples.map((sample) => (
-                <Link href="/media" key={sample.title} className="h-full">
-                  <Card className="cursor-pointer overflow-hidden hover:shadow-lg transition-shadow h-full flex flex-col">
-                    <div className="relative aspect-video">
-                      <Image
-                        src={sample.image}
-                        alt={sample.title}
-                        fill
-                        className="object-contain transition-transform duration-500"
-                        sizes="(max-width:768px)100vw,(max-width:1200px)50vw,33vw"
-                      />
-                    </div>
-                    <CardHeader>
-                      <Badge className="w-fit mb-2">{sample.mediaType}</Badge>
-                      <CardTitle className="text-lg">{sample.title}</CardTitle>
-                      <CardDescription>
-                        {sample.description}
-                      </CardDescription>
-                    </CardHeader>
-                  </Card>
-                </Link>
-              ))}
+              <PodcastCard podcast={mediaSamples.podcast} />
+              <ArticleCard article={mediaSamples.article} />
+              <OtherMediaCard otherMedia={mediaSamples.otherMedia} />
             </div>
 
             <div className="text-center mt-8">
               <Link href="/media">
-                <Button variant="outline" size="lg">
+                <Button className="cursor-pointer" variant="outline" size="lg">
                   View All Media
                   <ChevronRight className="ml-2 h-5 w-5" />
                 </Button>

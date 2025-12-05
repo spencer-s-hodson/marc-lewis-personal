@@ -16,7 +16,7 @@ export default function Services() {
       image: "/images/all-images/running-2.jpeg",
       bullets: [
         "Individualized training programs built around your goals, schedule, and performance metrics",
-        "One-on-one coaching sessions that prioritize technique, progression, and long-term development",
+        "One-on-one coaching sessions that prioritize technique, progression, long-term development and resiliency",
         "Ongoing support and accountability to ensure your training stays consistent and meaningful"
       ]
     },
@@ -40,7 +40,7 @@ export default function Services() {
         <div className="container w-full">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Expert Services
+              Comprehensive Performance Solutions
             </h2>
             <p className="text-muted-foreground text-lg">
               Comprehensive sports science solutions tailored to your unique needs
@@ -75,7 +75,7 @@ export default function Services() {
           </div>
           <div className="text-center mt-8">
             <Link href="/services">
-              <Button variant="outline" size="lg">
+              <Button variant="outline" size="lg" className="cursor-pointer">
                 View All Services
                 <ChevronRight className="ml-2 h-5 w-5" />
               </Button>

@@ -1,11 +1,7 @@
 import Image from "next/image";
-import { PodcastIcon } from "lucide-react";
 import { Metadata } from "next";
-import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from "@/components/ui/hover-card"
+
+import { ArticleCard, OtherMediaCard, PodcastCard } from "@/components/media-cards";
 
 export const metadata: Metadata = {
   title: "Media",
@@ -111,14 +107,6 @@ export default function Media() {
       type: "article",
       image: "/images/articles/programming-cardio-to-support-muscle-strength-development.jpg",
     },
-    // {
-    //   title: "Putting the C in S&C: An Energy Systems-based Approach",
-    //   publication: "Sports Science",
-    //   description: "Comprehensive framework for conditioning within strength and conditioning programs.",
-    //   link: "#",
-    //   type: "article",
-    //   image: "/images/articles/sports-science.jpg",
-    // },
     {
       title: "Strength Training and Endurance Athletes",
       publication: "Sports Science",
@@ -152,7 +140,6 @@ export default function Media() {
       link: "https://www.sportsmith.co/profile/marc-lewis/",
       image: "/images/other-media/ssh-cover.jpg",
       type: "Resource",
-      date: "",
     },
     {
       title: "Sport Science Network",
@@ -188,30 +175,6 @@ export default function Media() {
     },
   ];
 
-  const YouTubeIcon = () => {
-    return (
-      <Image
-        src="/icons/youtube.svg"
-        alt="YouTube"
-        width={28}
-        height={28}
-        className="brightness-0 invert"
-      />
-    );
-  };
-
-  const SpotifyIcon = () => {
-    return (
-      <Image
-        src="/icons/spotify.svg"
-        alt="Spotify"
-        width={28}
-        height={28}
-        className="brightness-0 invert"
-      />
-    );
-  };
-
   return (
     <>
       <section className="py-12">
@@ -231,51 +194,7 @@ export default function Media() {
             <h2 className="text-2xl md:text-3xl font-bold mb-6">Featured Podcasts</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {podcasts.map((podcast, index) => (
-                <div key={index} className="bg-card border border-border rounded-lg shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden">
-                  <div className="h-40 bg-muted flex items-center justify-center overflow-hidden relative">
-                    <a href={podcast.links[0].url} target="_blank" rel="noopener noreferrer">
-                      <Image
-                        src={podcast.image}
-                        alt={podcast.title}
-                        fill
-                        className="object-contain"
-                      />
-                    </a>
-                  </div>
-                  <div className="p-5">
-                    <h3 className="text-lg font-semibold mb-1">{podcast.title}</h3>
-                    <p className="text-muted-foreground mb-2 text-sm">{podcast.episode}</p>
-                    <p className="text-sm text-foreground mb-4">{podcast.description}</p>
-                    <div className="flex items-center gap-3">
-                      <span className="text-sm text-muted-foreground font-medium">Listen on:</span>
-                      {podcast.links.map((link, linkIndex) => (
-                        <HoverCard key={linkIndex}>
-                          <HoverCardTrigger asChild>
-                            <a
-                              href={link.url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="hover:scale-110 transition-transform duration-200 cursor-pointer"
-                            >
-                              {link.platform === "YouTube" ? (
-                                <YouTubeIcon />
-                              ) : link.platform === "Spotify" ? (
-                                <SpotifyIcon />
-                              ) : (
-                                <PodcastIcon className="w-7 h-7 hover:opacity-80" />
-                              )}
-                            </a>
-                          </HoverCardTrigger>
-                          <HoverCardContent className="w-auto">
-                            <div className="text-sm">
-                              <p>{link.platform}</p>
-                            </div>
-                          </HoverCardContent>
-                        </HoverCard>
-                      ))}
-                    </div>
-                  </div>
-                </div>
+                <PodcastCard key={index} podcast={podcast} />
               ))}
             </div>
           </div>
@@ -285,31 +204,7 @@ export default function Media() {
             <h2 className="text-2xl md:text-3xl font-bold mb-6">Articles & Publications</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {articles.map((article, index) => (
-                <div key={index} className="bg-card border border-border rounded-lg shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col">
-                  <div className="h-40 bg-muted flex items-center justify-center overflow-hidden relative">
-                    <a href={article.link} target="_blank" rel="noopener noreferrer">
-                      <Image
-                        src={article.image}
-                        alt={article.title}
-                        fill
-                        className="object-contain"
-                      />
-                    </a>
-                  </div>
-                  <div className="p-5 flex-1 flex flex-col">
-                    <h3 className="text-lg font-semibold mb-1">{article.title}</h3>
-                    <p className="text-muted-foreground text-sm mb-2">{article.publication}</p>
-                    <p className="text-sm text-foreground mb-4 flex-1">{article.description}</p>
-                    <a
-                      href={article.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-block text-primary font-medium hover:underline mt-auto"
-                    >
-                      Read {article.type === "research" ? "Research" : article.type === "feature" ? "Feature" : "Article"} →
-                    </a>
-                  </div>
-                </div>
+                <ArticleCard key={index} article={article} />
               ))}
             </div>
           </div>
@@ -319,31 +214,7 @@ export default function Media() {
             <h2 className="text-2xl md:text-3xl font-bold mb-6">Other Media</h2>
             <div className="grid md:grid-cols-3 gap-8">
               {otherMedia.map((media, index) => (
-                <div key={index} className="bg-card border border-border rounded-lg shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col">
-                  <div className="h-40 bg-muted flex items-center justify-center overflow-hidden relative">
-                    <a href={media.link} target="_blank" rel="noopener noreferrer">
-                      <Image
-                        src={media.image}
-                        alt={media.title}
-                        fill
-                        className="object-contain"
-                      />
-                    </a>
-                  </div>
-                  <div className="p-5 flex-1 flex flex-col">
-                    <h3 className="text-lg font-semibold mb-1">{media.title}</h3>
-                    {media.date && <p className="text-muted-foreground text-sm mb-2">{media.date}</p>}
-                    <p className="text-sm mb-4 flex-1">{media.description}</p>
-                    <a
-                      href={media.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-block text-primary font-medium hover:underline mt-auto"
-                    >
-                      View {media.type} →
-                    </a>
-                  </div>
-                </div>
+                <OtherMediaCard key={index} otherMedia={media} />
               ))}
             </div>
           </div>

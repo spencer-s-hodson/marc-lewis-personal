@@ -39,9 +39,6 @@ export default function Hero() {
 
         {/* Content */}
         <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 min-h-[600px] md:min-h-[700px]">
-          <Badge className="mb-4" variant="default">
-            Performance Specialist
-          </Badge>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 text-white">
             Where Science Meets Performance
           </h1>

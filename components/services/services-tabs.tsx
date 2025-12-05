@@ -56,13 +56,13 @@ export default function ServicesTabs() {
           <TabsList className="bg-white/10 backdrop-blur-lg border border-white/20">
             <TabsTrigger
               value="coaching"
-              className="data-[state=active]:bg-white data-[state=active]:text-black text-white hover:bg-white/20 hover:scale-105 transition-all duration-300"
+              className="cursor-pointer data-[state=active]:bg-white data-[state=active]:text-black text-white hover:bg-white/20 hover:scale-105 transition-all duration-300"
             >
               Coaching
             </TabsTrigger>
             <TabsTrigger
               value="workshops"
-              className="data-[state=active]:bg-white data-[state=active]:text-black text-white hover:bg-white/20 hover:scale-105 transition-all duration-300"
+              className="cursor-pointer data-[state=active]:bg-white data-[state=active]:text-black text-white hover:bg-white/20 hover:scale-105 transition-all duration-300"
             >
               Workshops
             </TabsTrigger>

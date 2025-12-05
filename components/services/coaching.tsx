@@ -92,11 +92,11 @@ export default function Coaching() {
           <p className="text-base sm:text-lg md:text-xl text-white/90 mb-6 md:mb-8 max-w-2xl">
             Start your journey with personalized, science-backed coaching
           </p>
-          <Button asChild size="lg" className="text-base md:text-lg px-6 md:px-8">
-            <Link href="mailto:marc.lewis@email.com?subject=Coaching%20Inquiry&body=Hi%20Marc%2C%0A%0AI'm%20interested%20in%20learning%20more%20about%20your%20coaching%20services.%0A%0A">
+          <Link href="/contact">
+            <Button className="cursor-pointer text-base md:text-lg px-6 md:px-8">
               Inquire About Coaching
-            </Link>
-          </Button>
+            </Button>
+          </Link>
         </div>
       </section>
     </section>

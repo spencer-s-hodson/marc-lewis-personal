@@ -20,16 +20,13 @@ export default function Credentials() {
                   Human Performance Specialist
                 </h2>
                 <p className="text-muted-foreground mb-6 leading-relaxed">
-                  With a Ph.D. in exercise physiology and extensive experience spanning collegiate athletics,
-                  research, and military service, Dr. Lewis brings unparalleled expertise to sports science,
-                  fitness, and wellness.
+                  With a Ph.D. in exercise physiology and extensive experience spanning professional and collegiate athletics, 
+                  Dr. Lewis brings unparalleled expertise to sports science, fitness, and wellness.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
                   His approach combines scientific rigor with practical application, helping athletes and
                   organizations achieve peak performance through evidence-based strategies.
                 </p>
-                {/* <div className="flex flex-wrap gap-2 mb-6">
-                </div> */}
               </div>
               <div className="grid grid-cols-2 col-span-2 gap-4">
                 <Card className="text-center p-6 hover:shadow-lg transition-shadow">
@@ -62,7 +59,7 @@ export default function Credentials() {
 
       <motion.div {...fadeInUp} className="mb-4">
         <Link className="flex justify-center mt-8" href="/about">
-          <Button>
+          <Button className="cursor-pointer">
             Learn More About Dr. Lewis
             <ChevronRight className="ml-2 h-4 w-4" />
           </Button>

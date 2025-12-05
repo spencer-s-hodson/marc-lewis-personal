@@ -33,15 +33,18 @@ export default function Home() {
                   Schedule a consultation to discuss how Dr. Lewis can help you achieve your athletic goals
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button size="lg" className="text-lg px-8">
-                    Book Consultation
-                    <ChevronRight className="ml-2 h-5 w-5" />
+                  <Button asChild size="lg" className="text-lg px-8">
+                    <Link href="/contact">
+                      Book Consultation
+                      <ChevronRight className="ml-2 h-5 w-5" />
+                    </Link>
                   </Button>
-                  <Link href="/services">
-                    <Button variant="outline" size="lg" className="text-lg px-8">
+
+                  <Button variant="outline" size="lg" className="text-lg px-8">
+                    <Link href="/services">
                       Learn More
-                    </Button>
-                  </Link>
+                    </Link>
+                  </Button>
                 </div>
               </div>
             </div>

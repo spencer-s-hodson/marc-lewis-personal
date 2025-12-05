@@ -31,10 +31,54 @@ export function ContactForm({
     phone_number: "",
     inquiry: "",
   });
+  const [errors, setErrors] = useState<{
+    email?: string;
+    phone_number?: string;
+  }>({});
+
+  const validateEmail = (email: string): boolean => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const validatePhoneNumber = (phone: string): boolean => {
+    // Remove all non-digit characters for validation
+    const digitsOnly = phone.replace(/\D/g, '');
+    // Accept 10 or 11 digits (with or without country code)
+    return digitsOnly.length >= 10 && digitsOnly.length <= 11;
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+
+    // Clear errors on change and validate if field has content
+    if (name === "email") {
+      if (value && !validateEmail(value)) {
+        setErrors(prev => ({ ...prev, email: "Please enter a valid email address" }));
+      } else {
+        setErrors(prev => ({ ...prev, email: undefined }));
+      }
+    }
+
+    if (name === "phone_number") {
+      if (value && !validatePhoneNumber(value)) {
+        setErrors(prev => ({ ...prev, phone_number: "Please enter a valid phone number (10-11 digits)" }));
+      } else {
+        setErrors(prev => ({ ...prev, phone_number: undefined }));
+      }
+    }
   };
+
+  const isDisabled = 
+    isLoading || 
+    !formData.first_name || 
+    !formData.last_name || 
+    !formData.email || 
+    !formData.phone_number || 
+    !formData.inquiry ||
+    !!errors.email ||
+    !!errors.phone_number;
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -118,7 +162,11 @@ export function ContactForm({
                   required
                   value={formData.email}
                   onChange={handleChange}
+                  className={errors.email ? "border-destructive" : ""}
                 />
+                {errors.email && (
+                  <p className="text-sm text-destructive mt-1">{errors.email}</p>
+                )}
               </Field>
 
               {/* Phone Number */}
@@ -135,7 +183,11 @@ export function ContactForm({
                   required
                   value={formData.phone_number}
                   onChange={handleChange}
+                  className={errors.phone_number ? "border-destructive" : ""}
                 />
+                {errors.phone_number && (
+                  <p className="text-sm text-destructive mt-1">{errors.phone_number}</p>
+                )}
               </Field>
 
               {/* Inquiry */}
@@ -158,7 +210,7 @@ export function ContactForm({
 
               {/* Submit Button */}
               <Field>
-                <Button type="submit" disabled={isLoading}>
+                <Button type="submit" disabled={isDisabled} className="cursor-pointer">
                   {isLoading ? (
                     <>
                       <svg
