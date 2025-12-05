@@ -21,15 +21,15 @@ interface TimelineProps {
 
 export function Timeline({ items }: TimelineProps) {
   return (
-    <div className="relative max-w-xl">
+    <div className="relative max-w-3xl mx-auto flex flex-col items-center">
       {/* Vertical line - adjusted for mobile */}
       <div className="absolute left-4 md:left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-primary/50 to-transparent" />
 
-      <div className="space-y-8 md:space-y-12">
+      <div className="space-y-8 md:space-y-12 w-full flex flex-col items-center">
         {items.map((item, index) => (
           <div
             key={index}
-            className="relative pl-12 md:pl-20 group"
+            className="relative pl-12 md:pl-20 group w-full flex flex-col items-center"
           >
             {/* Timeline dot - adjusted for mobile */}
             <div className="absolute left-2.5 md:left-5 top-1 w-5 h-5 md:w-7 md:h-7 rounded-full bg-background border-2 md:border-4 border-primary flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -46,7 +46,7 @@ export function Timeline({ items }: TimelineProps) {
             </div>
 
             {/* Content card */}
-            <div className="bg-card border border-border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 hover:border-primary/50">
+            <div className="bg-card border border-border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 hover:border-primary/50 w-full mx-auto">
               {/* Image at top of card if provided */}
               {item.image && (
                 <div className="w-full h-40 md:h-48 flex items-center justify-center p-6 bg-white/10">
@@ -66,8 +66,8 @@ export function Timeline({ items }: TimelineProps) {
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                   )}
                   <div className="flex-1">
-                    <h3 className="text-lg md:text-xl font-bold mb-1">{item.title}</h3>
-                    <p className="text-sm md:text-base text-primary font-semibold mb-2 md:mb-3">{item.organization}</p>
+                    <h3 className="text-lg md:text-xl font-bold mb-1 text-center">{item.title}</h3>
+                    <p className="text-sm md:text-base text-primary font-semibold mb-2 md:mb-3 text-center">{item.organization}</p>
                     {item.description && Array.isArray(item.description) && item.description.map((desc, idx) => (
                       <p
                         key={idx}
@@ -78,7 +78,7 @@ export function Timeline({ items }: TimelineProps) {
                     ))}
                     {item.links && Array.isArray(item.links) && item.links.length > 0 && (
                       <div className="overflow-x-auto -mx-4 px-4 md:mx-0 md:px-0">
-                        <div className="flex items-center gap-x-1.5 md:gap-x-2 text-xs md:text-sm mt-2">
+                        <div className="flex items-center justify-center gap-x-1.5 md:gap-x-2 text-xs md:text-sm mt-2">
                           {item.links.map((link, idx) => (
                             <span key={idx} className="flex items-center gap-x-1.5 md:gap-x-2 whitespace-nowrap">
                               <Link 
