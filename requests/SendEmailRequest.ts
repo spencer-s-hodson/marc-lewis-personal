@@ -4,7 +4,7 @@ export type EmailBodyContent = ContactFormData;
 
 export class SendEmailRequest {
   // TODO: update the to email and from email with a domain that belongs to marc
-  public to: string = "spencer.s.hodson@gmail.com";
+  public to: string = "drmarclewis@gmail.com";
   public from: string = "noreply@resend.dev";
   public subject: string;
   public body: EmailBodyContent;
