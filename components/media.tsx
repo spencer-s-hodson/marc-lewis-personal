@@ -1,11 +1,8 @@
 "use client";
 
-import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { fadeInUp } from "@/lib/fadeInUp";
 import { PodcastCard, ArticleCard, OtherMediaCard } from "@/components/media-cards";
@@ -33,7 +30,7 @@ export default function Media() {
     otherMedia: {
       title: "Sport Science Handbook",
       description: "Comprehensive guide for evidence-based decision-making in sport science.",
-      link: "https://www.sportsmith.co/profile/marc-lewis/",
+      link: "https://www.amazon.com/dp/B0G238WXJD",
       image: "/images/other-media/ssh-cover.jpg",
       type: "Resource",
     },

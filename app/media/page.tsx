@@ -137,7 +137,7 @@ export default function Media() {
     {
       title: "Sport Science Handbook",
       description: "Comprehensive guide for evidence-based decision-making in sport science.",
-      link: "https://www.sportsmith.co/profile/marc-lewis/",
+      link: "https://www.amazon.com/dp/B0G238WXJD",
       image: "/images/other-media/ssh-cover.jpg",
       type: "Resource",
     },

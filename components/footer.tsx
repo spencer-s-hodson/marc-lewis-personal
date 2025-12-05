@@ -65,6 +65,16 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
+                    href="https://www.instagram.com/marctlewis/?hl=en"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    Instagram
+                  </a>
+                </li>
+                <li>
+                  <a
                     href="https://www.researchgate.net/profile/Marc-Lewis"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -81,14 +91,6 @@ export default function Footer() {
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
                     Sportsmith
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="mailto:marc.lewis@email.com"
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    Email
                   </a>
                 </li>
               </ul>
