@@ -147,6 +147,22 @@ export default function Media() {
 
   const otherMedia = [
     {
+      title: "Sport Science Handbook",
+      description: "Comprehensive guide for evidence-based decision-making in sport science.",
+      link: "https://www.sportsmith.co/profile/marc-lewis/",
+      image: "/images/other-media/ssh-cover.jpg",
+      type: "Resource",
+      date: "",
+    },
+    {
+      title: "Sport Science Network",
+      description: "Online hub for sport science resources and community.",
+      link: "https://sportsciencenetwork.com",
+      image: "/images/companies/ssn.png",
+      type: "Website",
+      date: "",
+    },
+    {
       title: "Marc Lewis - Sportsmith",
       description: "Profile feature on Marc Lewis and his work in sports science.",
       link: "https://www.sportsmith.co/profile/marc-lewis/",

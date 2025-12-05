@@ -1,7 +1,7 @@
 "use client";
 
 import { Timeline } from "@/components/timeline";
-import { Metadata } from "next";
+// import { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
@@ -16,7 +16,17 @@ const careerTimeline = [
     title: "Co-Founder",
     organization: "Sport Science Network",
     description: [
-      "Leading hub advancing sport science practice through connecting practitioners to information, people, and resources allowing them to advance their practice."
+      "Leading hub advancing sport science practice through connecting practitioners to information, people, and resources allowing them to advance their practice.",
+    ],
+    links: [
+      {
+        label: "Sport Science Network",
+        url: "https://sportsciencenetwork.com",
+      },
+      {
+        label: "Sport Science Handbook",
+        url: "https://www.amazon.com/Sport-Science-Handbook-Blueprint-Decision-making-ebook/dp/B0G238WXJD/ref=tmm_kin_swatch_0",
+      },
     ],
     type: "experience" as const,
     image: "/images/companies/ssn.png",
@@ -347,7 +357,7 @@ export default function About() {
 
             {/* Large Screens */}
             <div className="hidden md:block">
-              <div className="grid grid-cols-2 gap-6 items-start">
+              <div className="grid grid-cols-3 gap-6 items-start">
                 {/* Left column - Text content */}
                 <div className="space-y-6">
                   <p className="text-lg leading-relaxed">
@@ -377,7 +387,7 @@ export default function About() {
                 </div>
 
                 {/* Right column - Image */}
-                <div className="relative h-[500px] rounded-lg overflow-hidden">
+                <div className="relative h-[500px] rounded-lg overflow-hidden col-span-2">
                   <Image
                     src="/images/all-images/texans-salute.jpeg"
                     alt="Military service tribute"

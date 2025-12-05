@@ -1,4 +1,5 @@
 import { CheckCircle2 } from "lucide-react";
+import Link from "next/link";
 
 interface TimelineItem {
   year: string;
@@ -7,6 +8,10 @@ interface TimelineItem {
   description: string[];
   type?: "milestone" | "achievement" | "experience";
   image?: string;
+  links?: {
+    label: string;
+    url: string;
+  }[];
   imageAlt?: string;
 }
 
@@ -16,7 +21,7 @@ interface TimelineProps {
 
 export function Timeline({ items }: TimelineProps) {
   return (
-    <div className="relative">
+    <div className="relative max-w-xl">
       {/* Vertical line - adjusted for mobile */}
       <div className="absolute left-4 md:left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-primary/50 to-transparent" />
 
@@ -71,6 +76,27 @@ export function Timeline({ items }: TimelineProps) {
                         {desc}
                       </p>
                     ))}
+                    {item.links && Array.isArray(item.links) && item.links.length > 0 && (
+                      <div className="overflow-x-auto -mx-4 px-4 md:mx-0 md:px-0">
+                        <div className="flex items-center gap-x-1.5 md:gap-x-2 text-xs md:text-sm mt-2">
+                          {item.links.map((link, idx) => (
+                            <span key={idx} className="flex items-center gap-x-1.5 md:gap-x-2 whitespace-nowrap">
+                              <Link 
+                                href={link.url} 
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-primary font-semibold hover:underline"
+                              >
+                                {link.label}
+                              </Link>
+                              {idx < (item.links?.length ?? 0) - 1 && (
+                                <span className="text-muted-foreground select-none">|</span>
+                              )}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>

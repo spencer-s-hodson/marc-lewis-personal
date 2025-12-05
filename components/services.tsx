@@ -12,7 +12,7 @@ export default function Services() {
     {
       icon: TrendingUp,
       title: "Coaching ",
-      description: "Data-driven strategies to maximize athletic potential and achieve peak performance",
+      description: "Data informed strategies to maximize athletic potential and achieve peak performance",
       image: "/images/all-images/running-2.jpeg",
       bullets: [
         "Individualized training programs built around your goals, schedule, and performance metrics",

@@ -43,11 +43,8 @@ export default function Hero() {
             Performance Specialist
           </Badge>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 text-white">
-            Coaching, Workshops & More
+            Where Science Meets Performance
           </h1>
-          {/* <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-4xl">
-          Dr. Marc Lewis is a leading expert in applied sports science, specializing in performance optimization, athlete monitoring, and strength and conditioning. He integrates cutting-edge research with practical strategies to enhance athletic performance and recovery. With a Ph.D. in exercise physiology and a background spanning collegiate athletics, research, and military service, Dr. Lewis brings a data-driven approach to sports science, fitness, and wellness.
-        </p> */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Button asChild size="lg" variant="default">
               <Link href="/services">View Services</Link>
