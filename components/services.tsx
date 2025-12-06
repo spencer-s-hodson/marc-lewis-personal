@@ -43,7 +43,7 @@ export default function Services() {
               Comprehensive Performance Solutions
             </h2>
             <p className="text-muted-foreground text-lg">
-              Comprehensive sports science solutions tailored to your unique needs
+              Comprehensive human performance solutions tailored to your unique needs
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-4">

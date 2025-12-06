@@ -13,7 +13,7 @@ export default function Footer() {
                 <span className="font-bold text-xl">Dr. Marc Lewis</span>
               </div>
               <p className="text-muted-foreground mb-4">
-                Leading expert in applied sports science, dedicated to optimizing athletic performance through evidence-based strategies and cutting-edge research.
+                Leading expert in applied human performance, dedicated to optimizing athletic performance through evidence-based strategies and cutting-edge research.
               </p>
             </div>
 

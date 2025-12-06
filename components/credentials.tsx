@@ -21,7 +21,7 @@ export default function Credentials() {
                 </h2>
                 <p className="text-muted-foreground mb-6 leading-relaxed">
                   With a Ph.D. in exercise physiology and extensive experience spanning professional and collegiate athletics, 
-                  Dr. Lewis brings unparalleled expertise to sports science, fitness, and wellness.
+                  Dr. Lewis brings unparalleled expertise to human performance, fitness, and wellness.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
                   His approach combines scientific rigor with practical application, helping athletes and

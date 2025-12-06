@@ -5,7 +5,7 @@ import { ArticleCard, OtherMediaCard, PodcastCard } from "@/components/media-car
 
 export const metadata: Metadata = {
   title: "Media",
-  description: "Explore Dr. Marc Lewis's podcast interviews, research publications, and articles on sports science and performance optimization.",
+  description: "Explore Dr. Marc Lewis's podcast interviews, research publications, and articles on human performance and optimization.",
 };
 
 export default function Media() {
@@ -86,7 +86,7 @@ export default function Media() {
     {
       title: "Graduation is More Than A Degree For VA Tech Director of Sports Science",
       publication: "The Roanoke Star",
-      description: "Dr. Lewis's journey and philosophy on education and professional development in sports science.",
+      description: "Dr. Lewis's journey and philosophy on education and professional development in human performance.",
       link: "https://www.theroanokestar.com/2021/05/03/graduation-is-more-than-a-degree-for-va-tech-director-of-sports-science/",
       type: "feature",
       image: "/images/articles/graduation-is-more-than.jpg",
@@ -151,7 +151,7 @@ export default function Media() {
     },
     {
       title: "Marc Lewis - Sportsmith",
-      description: "Profile feature on Marc Lewis and his work in sports science.",
+      description: "Profile feature on Marc Lewis and his work in human performance.",
       link: "https://www.sportsmith.co/profile/marc-lewis/",
       image: "/images/other-media/sportsmith.jpeg",
       type: "Profile",
@@ -183,9 +183,9 @@ export default function Media() {
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">Media & Insights</h1>
             <p className="text-lg text-muted-foreground">
-              Explore Dr. Marc Lewis's contributions to sports science through podcast interviews,
+              Explore Dr. Marc Lewis's contributions to human performance through podcast interviews,
               research publications, and feature articles. Discover insights on high-performance
-              training, athlete monitoring, and the latest advancements in sports science.
+              training, athlete monitoring, and the latest advancements in human performance.
             </p>
           </div>
 

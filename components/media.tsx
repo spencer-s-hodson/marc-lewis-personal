@@ -12,7 +12,7 @@ export default function Media() {
     podcast: {
       title: "Iron Culture Podcast",
       episode: "Ep 344 - Sports Science In Elite Athletics (ft. Dr. Marc Lewis)",
-      description: "Dr. Lewis discusses sports science applications in elite athletics.",
+      description: "Dr. Lewis discusses human performance applications in elite athletics.",
       image: "/images/podcasts/iron-culture.jpg",
       links: [
         { platform: "YouTube", url: "https://www.youtube.com/watch?v=IXd0-4jHfzs", icon: "▶️" },
